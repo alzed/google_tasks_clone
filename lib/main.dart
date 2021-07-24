@@ -19,13 +19,4 @@ class TasksApp extends StatelessWidget {
   }
 }
 
-    Key key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-        children: [
-          ),
-        ],
-      ),
-}
