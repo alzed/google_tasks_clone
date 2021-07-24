@@ -24,7 +24,12 @@ class BottomTasksBar extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.more_vert),
             splashRadius: 20.0,
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: buildTaskOptionsSheet,
+              );
+            },
           ),
         ],
       ),
@@ -65,6 +70,42 @@ class BottomTasksBar extends StatelessWidget {
                 Text('Create new list'),
               ],
             ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildTaskOptionsSheet(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          TextButton(
+            onPressed: () {},
+            child: Column(
+              children: [
+                Text('Sort by'),
+                Text('My order'),
+              ],
+            ),
+          ),
+          Divider(
+            thickness: 2.0,
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              'Rename list',
+            ),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text('Delete list'),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text('Delete all completed tasks'),
           ),
         ],
       ),
