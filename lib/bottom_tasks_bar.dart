@@ -54,6 +54,18 @@ class BottomTasksBar extends StatelessWidget {
             },
             child: Text('Task List 3'),
           ),
+          Divider(
+            thickness: 2.0,
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Icon(Icons.add),
+                Text('Create new list'),
+              ],
+            ),
+          ),
         ],
       ),
     );
