@@ -17,6 +17,7 @@ class BottomTasksBar extends StatelessWidget {
             onPressed: () {
               showModalBottomSheet(
                 context: context,
+                isScrollControlled: true,
                 builder: buildTaskListViewSheet,
               );
             },
@@ -26,6 +27,7 @@ class BottomTasksBar extends StatelessWidget {
             splashRadius: 20.0,
             onPressed: () {
               showModalBottomSheet(
+                isScrollControlled: true,
                 context: context,
                 builder: buildTaskOptionsSheet,
               );
@@ -37,7 +39,7 @@ class BottomTasksBar extends StatelessWidget {
   }
 
   Widget buildTaskListViewSheet(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -77,7 +79,7 @@ class BottomTasksBar extends StatelessWidget {
   }
 
   Widget buildTaskOptionsSheet(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
