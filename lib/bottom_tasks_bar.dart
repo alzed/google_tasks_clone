@@ -112,7 +112,7 @@ class BottomTasksBar extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TextButton(
+          TaskOptionButton(
             onPressed: () {},
             child: Column(
               children: [
@@ -123,22 +123,52 @@ class BottomTasksBar extends StatelessWidget {
           ),
           Divider(
             thickness: 2.0,
+            height: 2.0,
           ),
-          TextButton(
+          TaskOptionButton(
             onPressed: () {},
             child: Text(
               'Rename list',
             ),
           ),
-          TextButton(
+          TaskOptionButton(
             onPressed: () {},
             child: Text('Delete list'),
           ),
-          TextButton(
+          TaskOptionButton(
             onPressed: () {},
             child: Text('Delete all completed tasks'),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class TaskOptionButton extends StatelessWidget {
+  const TaskOptionButton({
+    Key key,
+    @required this.child,
+    @required this.onPressed,
+  }) : super(key: key);
+
+  final Widget child;
+  final Function onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onPressed,
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 20.0,
+            top: 8.0,
+            bottom: 8.0,
+          ),
+          child: child,
+        ),
       ),
     );
   }
