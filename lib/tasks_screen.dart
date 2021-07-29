@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'task_tile.dart';
+
 class TasksScreen extends StatelessWidget {
   const TasksScreen({Key key}) : super(key: key);
 
@@ -27,13 +29,11 @@ class TasksScreen extends StatelessWidget {
             child: ListView(
               padding: EdgeInsets.all(8.0),
               children: [
-                ListTile(
-                  leading: Icon(Icons.circle_outlined),
-                  title: Text('Task 1'),
+                TaskTile(
+                  text: 'Task 1',
                 ),
-                ListTile(
-                  leading: Icon(Icons.circle_outlined),
-                  title: Text('Task 2'),
+                TaskTile(
+                  text: 'Task 2',
                 ),
               ],
             ),
