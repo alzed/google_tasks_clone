@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'bottom_tasks_bar.dart';
+import 'add_task_button.dart';
 
 void main() {
   runApp(TasksApp());
@@ -14,6 +15,8 @@ class TasksApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         bottomNavigationBar: BottomTasksBar(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: AddTaskButton(),
       ),
     );
   }
