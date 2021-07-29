@@ -16,6 +16,7 @@ class TasksBottomSheet extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.only(
             top: 16.0,
+            bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           decoration: BoxDecoration(
             color: Colors.white,
