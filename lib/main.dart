@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'bottom_tasks_bar.dart';
 import 'add_task_button.dart';
+import 'tasks_screen.dart';
 
 void main() {
   runApp(TasksApp());
@@ -17,9 +18,8 @@ class TasksApp extends StatelessWidget {
         bottomNavigationBar: BottomTasksBar(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: AddTaskButton(),
+        body: TasksScreen(),
       ),
     );
   }
 }
-
-
