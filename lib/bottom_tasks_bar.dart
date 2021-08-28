@@ -112,63 +112,28 @@ class BottomTasksBar extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TaskOptionButton(
-            onPressed: () {},
-            child: Column(
-              children: [
-                Text('Sort by'),
-                Text('My order'),
-              ],
-            ),
+          ListTile(
+            title: Text('Sort by'),
+            subtitle: Text('My order'),
+            onTap: () {},
           ),
           Divider(
             thickness: 2.0,
             height: 2.0,
           ),
-          TaskOptionButton(
-            onPressed: () {},
-            child: Text(
-              'Rename list',
-            ),
+          ListTile(
+            title: Text('Rename list'),
+            onTap: () {},
           ),
-          TaskOptionButton(
-            onPressed: () {},
-            child: Text('Delete list'),
+          ListTile(
+            title: Text('Delete list'),
+            onTap: () {},
           ),
-          TaskOptionButton(
-            onPressed: () {},
-            child: Text('Delete all completed tasks'),
+          ListTile(
+            title: Text('Delete all completed tasks'),
+            onTap: () {},
           ),
         ],
-      ),
-    );
-  }
-}
-
-class TaskOptionButton extends StatelessWidget {
-  const TaskOptionButton({
-    Key key,
-    @required this.child,
-    @required this.onPressed,
-  }) : super(key: key);
-
-  final Widget child;
-  final Function onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Align(
-        alignment: Alignment.topLeft,
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: 20.0,
-            top: 8.0,
-            bottom: 8.0,
-          ),
-          child: child,
-        ),
       ),
     );
   }
