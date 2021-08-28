@@ -44,63 +44,36 @@ class BottomTasksBar extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 6.0),
-            child: TextButton(
-              onPressed: () {
+          Container(
+            margin: const EdgeInsets.only(right: 8.0),
+            decoration: BoxDecoration(
+              color: Colors.blueAccent.withAlpha(50),
+              borderRadius: BorderRadius.horizontal(
+                right: Radius.circular(30.0),
+              ),
+            ),
+            child: ListTile(
+              title: Text(
+                'My Tasks',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.blueAccent.shade700,
+                ),
+              ),
+              contentPadding: const EdgeInsets.only(left: 55.0),
+              onTap: () {
                 Navigator.of(context).pop();
               },
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(Colors.blueGrey.withAlpha(80)),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.horizontal(
-                      right: Radius.circular(30.0),
-                    ),
-                  ),
-                ),
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.only(left: 35.0, top: 8.0, bottom: 8.0),
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'My Tasks',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.blueAccent.shade700,
-                    ),
-                  ),
-                ),
-              ),
             ),
           ),
           Divider(
             thickness: 2.0,
           ),
-          TextButton(
-            onPressed: () {},
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.black87,
-                    size: 20.0,
-                  ),
-                ),
-                Text(
-                  'Create new list',
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 16.0,
-                  ),
-                ),
-              ],
-            ),
+          ListTile(
+            leading: Icon(Icons.add),
+            title: Text('Create new list'),
+            horizontalTitleGap: 1.0,
+            onTap: () {},
           ),
         ],
       ),
