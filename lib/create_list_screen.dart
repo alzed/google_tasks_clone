@@ -15,7 +15,7 @@ class _CreateListScreenState extends State<CreateListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 2.0,
+        elevation: 0.0,
         backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(
@@ -46,41 +46,47 @@ class _CreateListScreenState extends State<CreateListScreen> {
           ),
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.only(left: 10.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.zero,
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              blurRadius: 2.0,
+      body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(left: 10.0),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border(
+                top: BorderSide(width: 0.6, color: Colors.grey),
+                bottom: BorderSide(width: 0.6, color: Colors.grey),
+              ),
             ),
-          ],
-        ),
-        child: TextField(
-          autofocus: true,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderSide: BorderSide.none,
+            child: TextField(
+              autofocus: true,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                hintText: 'Enter list title',
+              ),
+              onSubmitted: (task) {
+                print(task);
+                Navigator.of(context).pop();
+              },
+              onChanged: (task) {
+                setState(() {
+                  if (task.isNotEmpty) {
+                    edit = true;
+                  } else {
+                    edit = false;
+                  }
+                });
+              },
+              controller: controller,
             ),
-            hintText: 'Enter list title',
           ),
-          onSubmitted: (task) {
-            print(task);
-            Navigator.of(context).pop();
-          },
-          onChanged: (task) {
-            setState(() {
-              if (task.isNotEmpty) {
-                edit = true;
-              } else {
-                edit = false;
-              }
-            });
-          },
-          controller: controller,
-        ),
+          Expanded(
+            child: Container(
+              color: Colors.blueGrey.shade50,
+            ),
+          )
+        ],
       ),
     );
   }
