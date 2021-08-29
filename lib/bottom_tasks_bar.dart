@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'tasks_bottom_sheet.dart';
+import 'create_list_screen.dart';
 
 class BottomTasksBar extends StatelessWidget {
   const BottomTasksBar({
@@ -73,7 +74,12 @@ class BottomTasksBar extends StatelessWidget {
             leading: Icon(Icons.add),
             title: Text('Create new list'),
             horizontalTitleGap: 1.0,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CreateListScreen()),
+              );
+            },
           ),
         ],
       ),
