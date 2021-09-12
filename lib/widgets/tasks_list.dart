@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'task_tile.dart';
 
-class TasksScreen extends StatelessWidget {
-  const TasksScreen({Key key}) : super(key: key);
+class TasksList extends StatelessWidget {
+  const TasksList({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +35,27 @@ class TasksScreen extends StatelessWidget {
                 TaskTile(
                   text: 'Task 2',
                 ),
+                // Material(
+                //   elevation: 0.0,
+                //   child: ExpansionPanelList(
+                //     children: [
+                //       ExpansionPanel(
+                //         isExpanded: true,
+                //         headerBuilder: (context, isOpen) {
+                //           return Text('Completed');
+                //         },
+                //         body: Column(
+                //           children: [
+                //             ListTile(
+                //               leading: Icon(Icons.check),
+                //               title: Text('Task 0'),
+                //             )
+                //           ],
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           )

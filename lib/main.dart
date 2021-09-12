@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'bottom_tasks_bar.dart';
-import 'add_task_button.dart';
-import 'tasks_screen.dart';
+import 'package:google_tasks_clone/screens/tasks_screen.dart';
 
 void main() {
   runApp(TasksApp());
@@ -14,12 +12,8 @@ class TasksApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        bottomNavigationBar: BottomTasksBar(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: AddTaskButton(),
-        body: TasksScreen(),
-      ),
+      debugShowCheckedModeBanner: false,
+      home: TasksScreen(),
     );
   }
 }

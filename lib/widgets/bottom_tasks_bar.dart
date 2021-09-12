@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'tasks_bottom_sheet.dart';
-import 'create_list_screen.dart';
+import '../screens/create_list_screen.dart';
 
 class BottomTasksBar extends StatelessWidget {
   const BottomTasksBar({
